@@ -1,8 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const users = require('./routes/api/users')
-const profile = require("./routes/api/profile");
-const posts = require("./routes/api/images");
+const profiles = require("./routes/api/profiles");
+const images = require("./routes/api/images");
+
 const bodyparser = require('body-parser');
 const passport = require('passport');
 const app = express();
@@ -25,7 +26,7 @@ require('./config/passport')(passport);
 
 //Use routes
 app.use('/api/users', users)
-app.use('/api/profiles', profile);
+app.use('/api/profiles', profiles);
 app.use('/api/images', images);
 
 const port = 5000;

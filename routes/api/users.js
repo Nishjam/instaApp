@@ -7,6 +7,14 @@ const passport = require('passport');
 const keys = require("../../config/keys");
 const router = express.Router();
 
+// Load input validation
+const validateRegisterInput = require('../../validation/register');
+
+//test
+router.get("/test",(req,res) =>{
+    res.json({msg:"users api works"});
+});
+
 // @route   POST api/users/register
 // @desc    Register new user
 // @access  public
@@ -97,3 +105,4 @@ router.get("/current",
         return res.json(req.user)
     }
 );
+module.exports = router;
