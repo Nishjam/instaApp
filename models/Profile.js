@@ -6,7 +6,7 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  username: {
+  handle: {
       type: String,
       require:true,
       max:20
@@ -14,15 +14,32 @@ const ProfileSchema = new Schema({
   website: {
       type: String
   },
-  Bio: {
+  bio: {
       type: String
-  },
-  email: {
-      type: String,
-      require: true
   },
   gender: {
       type:String     
+  },
+  social: {
+    youtube: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    linkedin: {
+      type: String
+    },
+    instagram: {
+      type: String
+    }
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 
 });
